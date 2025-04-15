@@ -3567,7 +3567,7 @@ export namespace Prisma {
     name: string
     profile_Photo?: string | null
     contact_number: string
-    isDeleted: boolean
+    isDeleted?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
     user: UserCreateNestedOneWithoutAdminInput
@@ -3579,7 +3579,7 @@ export namespace Prisma {
     email: string
     profile_Photo?: string | null
     contact_number: string
-    isDeleted: boolean
+    isDeleted?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
   }
@@ -3612,7 +3612,7 @@ export namespace Prisma {
     email: string
     profile_Photo?: string | null
     contact_number: string
-    isDeleted: boolean
+    isDeleted?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
   }
@@ -4088,7 +4088,7 @@ export namespace Prisma {
     name: string
     profile_Photo?: string | null
     contact_number: string
-    isDeleted: boolean
+    isDeleted?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
   }
@@ -4098,7 +4098,7 @@ export namespace Prisma {
     name: string
     profile_Photo?: string | null
     contact_number: string
-    isDeleted: boolean
+    isDeleted?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
   }
