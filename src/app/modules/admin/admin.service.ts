@@ -1,4 +1,4 @@
-import { Prisma, PrismaClient } from "../../../generated/prisma"
+import { Admin, Prisma, PrismaClient } from "../../../generated/prisma"
 import calculatePagination from "../../../helpers/pagination"
 import { prisma } from "../../../shared/prisma"
 import { adminFilterableFields } from "./admin.constant"
@@ -63,6 +63,48 @@ const getAllAdminService = async (params: any, optoins: any) => {
       }
 }
 
+const getSingleAdminService = async(id:string)=>{
+    const reuslt = await prisma.admin.findUnique(
+        {
+            where:{
+                id:id,
+                isDeleted:false
+            }
+        }
+    )
+    return reuslt
+}
+
+const updateAdminService = async (id:string,data:Partial<Admin>)=>{
+    const reuslt = await prisma.admin.update(
+        {
+            where:{
+                id:id
+            },
+            data:data
+        }
+    )
+    return reuslt
+}
+
+const deleteAdminService = async (id:string)=>{
+    const result = await prisma.admin.update(
+        {
+            where:{
+                id:id 
+            },
+            data:{
+                isDeleted:true
+            }
+        }
+    )
+    return result
+}
+
+
 export const adminservice = {
-    getAllAdminService
+    getAllAdminService,
+    getSingleAdminService,
+    updateAdminService,
+    deleteAdminService
 }

@@ -7,4 +7,5 @@ router.post('/user', userController.createAdminController)
 router.get('/user', userController.getAdminController)
 
 
+
 export const userRouter = router
